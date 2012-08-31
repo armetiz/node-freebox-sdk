@@ -113,7 +113,9 @@ module.exports = function (options) {
         };
         
         request("/wifi.cgi", data, function(result) {
-            callback(result);
+            if(callback) {
+                callback(result);
+            }
         });
     }
     
@@ -127,7 +129,9 @@ module.exports = function (options) {
         };
         
         request("/wifi.cgi", data, function(result) {
-            callback(result);
+            if(callback) {
+                callback(result);
+            }
         });
     }
     
