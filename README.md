@@ -1,7 +1,9 @@
 node-freebox-sdk
 ================
 
-SDK to manage Freebox v6
+SDK to manage Freebox v6.
+
+**Right now, only wifi is manageable. Stay tuned.**
 
 ## Quick Examples
 Toggle wifi connection and get wifi informations.
