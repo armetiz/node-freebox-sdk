@@ -1,9 +1,9 @@
 {
     "name"          : "freebox",
     "description"   : "Freebox Manager",
-    "version"       : "0.1.0",
+    "version"       : "0.2.0",
     "homepage"      : "http://github.com/armetiz/node-freebox-sdk",
-    "keywords"      : ["freebox", "sdk", "free"],
+    "keywords"      : ["freebox", "sdk", "free", "wifi"],
     "author"        : "Thomas Tourlourat <thomas@tourlourat.com>",
     "main"          : "./freebox",
     "bugs" :
@@ -17,9 +17,6 @@
     },
     "engines" : {
         "node" : ">=0.9.0"
-    },
-    "dependencies": {
-       "jquery": ">=1.7.3"
     },
     "licenses" :
     [ {
