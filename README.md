@@ -57,3 +57,52 @@ freebox.on("error", function(message) {
 
 freebox.connect();
 ```
+
+API
+---
+
+### new Freebox(options)
+
+Password is the only mandatory option.
+
+```js
+var options = {};
+
+options.password;   //default value: ""
+options.hostname;   //default value: "mafreebox.free.fr";
+options.port        //default value: 80
+options.login       //default value: "freebox";
+options.wifiChannel //default value: 9;
+options.wifiHtMode  //default value: "disabled";
+```
+
+wifiHtMode allowed values : "disabled", 20, "40_lower", "40_upper"
+
+### freebox.connect()
+
+Start a connection between Node and Freebox.
+
+### freebox.wifiStations(callback)
+
+Get wifi connected stations.
+Callback take one "result" argument.
+
+### freebox.wifiStatus(callback)
+
+Get wifi status.
+Callback take one "result" argument.
+
+### freebox.wifiConfig(callback)
+
+Get wifi configuration.
+Callback take one "result" argument.
+
+### freebox.wifiOn(callback)
+
+Switch on WiFi.
+Callback take one "result" argument.
+
+### freebox.wifiOff(callback)
+
+Switch off WiFi.
+Callback take one "result" argument.

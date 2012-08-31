@@ -5,17 +5,16 @@ var querystring = require("querystring");
 module.exports = function (options) {
     options = options || {};
     
-    var self = new events.EventEmitter();
-    var cookie;
     var hostname = options.hostname || "mafreebox.free.fr";
     var port = options.port || 80;
     var login = "freebox";
     var wifiChannel = options.wifiChannel || 9;
     var wifiHtMode = options.wifiHtMode || "disabled";
     var password = options.password || "";
-    
+
     var connected = false;
-    
+    var self = new events.EventEmitter();
+    var cookie;
     
     self.connect = function () {
         var http = require("http");
