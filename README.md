@@ -16,6 +16,14 @@ freebox.on("connect", function() {
     freebox.wifiStatus(function (isOn) {
         console.log("wifi is: " + (isOn ? "on" : "off"));
     });
+    
+    freebox.wifiStatusAPI(function (isOn) {
+        console.log("Through API wifi is: " + (isOn ? "on" : "off"));
+    });
+});
+
+freebox.on("error", function(message) {
+    console.log("error: " + message);
 });
 
 freebox.connect();
