@@ -9,7 +9,7 @@ SDK to manage Freebox v6.
 Toggle wifi connection and get wifi informations.
 
 ```js
-var Freebox = require("freebox");
+var Freebox = require("freebox-sdk");
 var freebox = new Freebox({
     password: "my_password",
     wifiChannel: 11,
