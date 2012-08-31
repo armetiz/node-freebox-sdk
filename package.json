@@ -1,6 +1,6 @@
 {
-    "name"          : "freebox",
-    "description"   : "Freebox Manager",
+    "name"          : "freebox-sdk",
+    "description"   : "Freebox SDK",
     "version"       : "0.2.0",
     "homepage"      : "http://github.com/armetiz/node-freebox-sdk",
     "keywords"      : ["freebox", "sdk", "free", "wifi"],
