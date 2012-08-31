@@ -1,6 +1,7 @@
 var http = require("http");
 var events = require("events");
 var jQuery = require("jQuery");
+var util = require("util");
 
 module.exports = function (password) {
     var self = new events.EventEmitter();
@@ -73,17 +74,75 @@ module.exports = function (password) {
         });
         
         req.on('error', function(e) {
-            self.emit("error", "can't check wifi status");
+            self.emit("error", "problem on: " + path);
         });
         
         req.end();
     };
+    
+    var requestAPI = function (path, method, end) {
+        var data = "method=wifi.status_get";
+        var options = {
+            host: "mafreebox.free.fr",
+            port: 80,
+            method: "POST",
+            path: "/wifi.cgi",
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'content-type': 'application/x-www-form-urlencoded',
+                'content-length': data.length,
+                'cookie': cookie
+            }
+        };
+
+        req = http.request(options, function(res) {
+            if(res.statusCode !== 200) {
+                self.emit("error", "get a HTTP Error: " + res.statusCode);
+                return;
+            }
+            
+            res.setEncoding('utf8');
+            
+            var body = "";
+            
+            res.on('data', function (chunk) {
+                body += chunk;
+            });
+            
+            res.on('end', function () {
+                end(JSON.parse(body).result);
+            });
+        });
+        
+        req.on('error', function(e) {
+            console.log(e);
+            self.emit("error", "problem on: " + path);
+            return;
+        });
+        
+        req.write(data);
+        req.end();
+    }
+    
+    self.wifiOn = function (callback) {
+        
+    }
+    
+    self.wifiOff = function (callback) {
+        
+    }
     
     self.wifiStatus = function (callback) {
         request("/settings.php?page=wifi_conf", function(body) {
             callback ("checked" === jQuery(body).find("input[name=enabled]").attr("checked"));
         });
     };
+    
+    self.wifiStatusAPI = function (callback) {
+        requestAPI("/wifi.cgi", "wifi.status_get", function(result) {
+            callback(result.active);
+        });
+    }
     
     return self;
 };
