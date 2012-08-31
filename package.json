@@ -1,0 +1,30 @@
+{
+    "name"          : "freebox",
+    "description"   : "Freebox Manager",
+    "version"       : "0.1.0",
+    "homepage"      : "http://github.com/armetiz/node-freebox-sdk",
+    "keywords"      : ["freebox", "sdk", "free"],
+    "author"        : "Thomas Tourlourat <thomas@tourlourat.com>",
+    "main"          : "./freebox",
+    "bugs" :
+    {
+        "mail" : "",
+        "url" : "http://github.com/armetiz/node-freebox-sdk/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/armetiz/node-freebox-sdk.git"
+    },
+    "engines" : {
+        "node" : ">=0.9.0"
+    },
+    "dependencies": {
+       "jquery": ">=1.7.3"
+    },
+    "licenses" :
+    [ {
+        "type" : "MIT", 
+        "url" : "http://github.com/armetiz/node-freebox-sdk/raw/master/LICENSE"
+    }
+    ]
+}
