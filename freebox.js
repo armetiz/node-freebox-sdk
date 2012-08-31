@@ -17,9 +17,6 @@ module.exports = function (options) {
     var cookie;
     
     self.connect = function () {
-        var http = require("http");
-        var querystring = require("querystring");
-
         var data = querystring.stringify({
             login: login,
             passwd: password
