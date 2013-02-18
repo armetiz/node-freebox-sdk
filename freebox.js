@@ -15,6 +15,7 @@ module.exports = function (options) {
     var connected = false;
     var self = new events.EventEmitter();
     var cookie;
+    var csrf;
     
     self.connect = function () {
         var data = querystring.stringify({
@@ -39,6 +40,8 @@ module.exports = function (options) {
                 cookie = new String(cookie);
                 cookie = cookie.substr(0, cookie.indexOf(";"));
 
+                csrf = res.headers['x-fbx-csrf-token'];
+
                 connected = true;
 
                 self.emit("connect");
@@ -60,6 +63,8 @@ module.exports = function (options) {
         if(false === connected) {
             throw "You have to be connected before use any functions";
         }
+
+        data.csrf_token = csrf;
         
         var dataStringify = querystring.stringify(data);
         var options = {
