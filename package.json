@@ -1,7 +1,7 @@
 {
     "name"          : "freebox-sdk",
     "description"   : "Freebox SDK",
-    "version"       : "0.2.1",
+    "version"       : "0.3.0",
     "homepage"      : "http://github.com/armetiz/node-freebox-sdk",
     "keywords"      : ["freebox", "sdk", "free", "wifi"],
     "author"        : "Thomas Tourlourat <thomas@tourlourat.com>",
