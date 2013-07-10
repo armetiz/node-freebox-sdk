@@ -1,7 +1,7 @@
 node-freebox-sdk
 ================
 
-SDK to manage Freebox v6.
+SDK to manage Freebox v6. Caution, work only with firmware 1.x.x
 
 **Right now, only wifi is manageable. Stay tuned.**
 
